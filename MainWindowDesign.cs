@@ -39,6 +39,7 @@ namespace linuxcc2
             this.groupBox1 = new GroupBox();
             this.label1 = new Label();
             this.label2 = new Label();
+            this.label3 = new Label();
             this.button1 = new Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,7 @@ namespace linuxcc2
 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(20, 20);
+            this.label1.Location = new System.Drawing.Point(20, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 19);
             this.label1.TabIndex = 1;
@@ -65,12 +66,21 @@ namespace linuxcc2
             this.label2.TabIndex = 2;
             this.label2.Text = "Size: ";
 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(105, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 19);
+            this.label3.TabIndex = 4;
+            this.label3.Text = " ";
+
             this.button1.Location = new Point(100,20);
             this.button1.Name = "button1";
-            this.button1.Size = new Size(200, 24);
+            this.button1.Size = new Size(400, 30);
             this.button1.TabIndex = 3;
             this.button1.Text = "Click me to choose big file";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,6 +88,7 @@ namespace linuxcc2
 
             this.groupBox1.Controls.Add(label1);
             this.groupBox1.Controls.Add(label2);
+            this.groupBox1.Controls.Add(label3);
             this.groupBox1.Controls.Add(button1);
             this.Controls.Add(groupBox1);
             //this.Controls.Add(label1);
@@ -96,6 +107,7 @@ namespace linuxcc2
 
         private Label label1;
         private Label label2;
+        private Label label3;
         private Button button1;
         private GroupBox groupBox1;
         //private FolderBrowserDialog folderBrowserDialog1;
