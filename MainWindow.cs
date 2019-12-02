@@ -85,7 +85,7 @@ namespace linuxcc2
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (button2.Text != "Click me to choose primary path" && button3.Text != "Click me to choose secondary path")
+            if (button2.Text != "Click me to choose primary path" && button3.Text != "Click me to choose secondary path" && button2.Text != button3.Text)
             {
                 //MessageBox.Show("go");
 
@@ -95,7 +95,7 @@ namespace linuxcc2
             }
             else
             {
-                MessageBox.Show("Please choose primary&secondary path.", "Please choose primary&secondary path", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please choose primary&secondary path.\r\nThe two path can not be the same.", "Please choose primary&secondary path", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -152,6 +152,79 @@ namespace linuxcc2
                 this.button4.Enabled = true;
                 this.button6.Enabled = true;
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "Click me to choose big file" && button5.Text == "Unlock pair")
+            {
+
+                if (MessageBox.Show("This step will deploy some files.\r\nPlease be patient until it is finished.\r\nAfter this, the begin test button will be enabled.", "Deploy test environment", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+
+                    this.button1.Enabled = false;
+                    this.button5.Enabled = false;
+                    this.button8.Enabled = false;
+                    this.button9.Enabled = false;
+
+                    //to deploy file
+                    //部署 /root/ 下的via_cpcmp 和其外层文件夹
+                    int realrow = dataGridView1.RowCount - 1;
+                    int realcolumn = dataGridView1.ColumnCount;
+
+                    DateTime time1 = DateTime.Now;
+                    int a = ConvertDateTimeInt(time1);
+                    string timestamp = a.ToString();
+
+                    for (int i = 0; i < realrow; i++)
+                    {
+                        string log1 = time1.ToString() + "____mkdir____" + "nickccpair-" + i.ToString() + "-" + a;
+                        this.listBox1.Items.Add(log1);                       
+                    }
+
+
+
+                    //部署主路径外层文件夹，再复制源文件进去
+
+
+                    //部署第二路径外层文件夹
+
+
+                    //
+                    this.button7.Enabled = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please choose big file && Lock pair.", "Error step", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            //delete file
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (button1.Text != "Click me to choose big file" && button5.Text == "Unlock pair")
+            {
+
+                if (MessageBox.Show("Please make sure 1-3 steps are complete.", "Begin C&C test", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    //begin test
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please choose big file && Lock pair.", "Error step", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public static int ConvertDateTimeInt(DateTime time)
+        {
+            DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+            return (int)(time - startTime).TotalSeconds;
         }
     }
 }

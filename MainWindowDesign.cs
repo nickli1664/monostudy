@@ -50,9 +50,17 @@ namespace linuxcc2
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -63,7 +71,7 @@ namespace linuxcc2
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(10, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(600, 100);
+            this.groupBox1.Size = new System.Drawing.Size(600, 103);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "First Step: Select your C&C big file";
@@ -72,7 +80,7 @@ namespace linuxcc2
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(20, 25);
+            this.label1.Location = new System.Drawing.Point(19, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 19);
             this.label1.TabIndex = 1;
@@ -82,7 +90,7 @@ namespace linuxcc2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(20, 60);
+            this.label2.Location = new System.Drawing.Point(19, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 19);
             this.label2.TabIndex = 2;
@@ -92,7 +100,7 @@ namespace linuxcc2
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(105, 60);
+            this.label3.Location = new System.Drawing.Point(104, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(19, 19);
             this.label3.TabIndex = 4;
@@ -100,7 +108,7 @@ namespace linuxcc2
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(100, 20);
+            this.button1.Location = new System.Drawing.Point(99, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(400, 30);
             this.button1.TabIndex = 3;
@@ -118,7 +126,7 @@ namespace linuxcc2
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(10, 120);
+            this.groupBox2.Location = new System.Drawing.Point(10, 119);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(600, 357);
             this.groupBox2.TabIndex = 5;
@@ -219,11 +227,78 @@ namespace linuxcc2
             this.Column2.Name = "Column2";
             this.Column2.Width = 270;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button8);
+            this.groupBox3.Location = new System.Drawing.Point(616, 10);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(152, 103);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Third Step: Deploy test environment";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(26, 36);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(100, 30);
+            this.button8.TabIndex = 11;
+            this.button8.Text = "Deploy";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(642, 257);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(100, 30);
+            this.button9.TabIndex = 12;
+            this.button9.Text = "Delete CC file";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button7);
+            this.groupBox4.Location = new System.Drawing.Point(616, 119);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(152, 100);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Fourth Step: Begin test";
+            // 
+            // button7
+            // 
+            this.button7.Enabled = false;
+            this.button7.Location = new System.Drawing.Point(26, 47);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(100, 30);
+            this.button7.TabIndex = 10;
+            this.button7.Text = "Begin test";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Items.AddRange(new object[] {
+            "Deploy log"});
+            this.listBox1.Location = new System.Drawing.Point(10, 483);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(600, 64);
+            this.listBox1.TabIndex = 13;
+            // 
             // lccMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(780, 557);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -234,6 +309,8 @@ namespace linuxcc2
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -247,6 +324,7 @@ namespace linuxcc2
         private Label label3;
         private Button button1;
         private GroupBox groupBox1;
+        private GroupBox groupBox2;
         private DataGridView dataGridView1;
         private Button button3;
         private Button button4;
@@ -254,7 +332,12 @@ namespace linuxcc2
         private Label label4;
         private Label label5;
         private Button button6;
-        private GroupBox groupBox2;
+        private GroupBox groupBox3;
+        private GroupBox groupBox4;
+        private Button button7;
+        private Button button8;
+        private ListBox listBox1;
+        private global::System.Windows.Forms.Button button9;
 
         //private FolderBrowserDialog folderBrowserDialog1;
 
